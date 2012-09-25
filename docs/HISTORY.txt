@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0a1
+1.0a1
 -----
 
-* initial development
+* Mostly derived from zopeskel.dexterity; see that project's repository for earlier history.
