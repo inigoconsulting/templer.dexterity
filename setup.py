@@ -14,7 +14,7 @@ tests_require = [
 setup(name='templer.dexterity',
     version=version,
     description="templer templates for dexterity",
-    long_description=open("README.txt").read() + "\n" +
+    long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
     # Get more strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
@@ -48,8 +48,6 @@ setup(name='templer.dexterity',
     install_requires=[
         'setuptools',
         'templer.core',
-        'templer.buildout',
-        'templer.zope',
         'templer.localcommands',
     ],
     tests_require=tests_require,
@@ -60,5 +58,6 @@ setup(name='templer.dexterity',
     dexterity = templer.dexterity:Dexterity
     [templer.templer_sub_template]
     dexterity_contenttype = templer.dexterity.localcommands.dexterity:DexterityContent
+    dexterity_behavior = templer.dexterity.localcommands.dexterity:DexterityBehavior
     """,
     )

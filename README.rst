@@ -46,12 +46,12 @@ directory::
 Adding a content-type skeleton to an existing package::
 
   cd yourbuildout/src/your-product/src
-  ../../../bin/paster addcontent dexterity_content
+  ../../../bin/paster add dexterity_content
 
 Adding a behavior skeleton::
 
   cd yourbuildout/src/your-product/src
-  ../../../bin/paster addcontent dexterity_behavior
+  ../../../bin/paster add dexterity_behavior
 
 Notes
 =====

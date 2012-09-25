@@ -21,8 +21,7 @@ POST_RUN_TEXT = """"""
 if SUPPORTS_LOCAL_COMMANDS:
     HELP_TEXT += """
 This template supports local commands.  These commands allow you to
-generate skeleton content types and add fields and other features to
-your new types.
+generate skeleton content types and behaviors to your new package.
 """
     POST_RUN_TEXT = LOCAL_COMMANDS_MESSAGE
 
