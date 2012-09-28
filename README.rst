@@ -7,8 +7,8 @@ Templer is a Python source package skeleton creator.
 
 templer.dexterity provides a mechanism to quickly create Dexterity add-on
 skeletons. It also makes it easy to add new content types to an existing
-skeleton. New content types built with this tool will support round-trip
-elaboration with Dexterity's TTW schema editor.
+skeleton. New content types built with this tool are easy to integrate
+with types you may have developed with Dexterity's TTW schema editor.
 
 This is a development tool. You should be familiar with Plone and buildout to
 use it. You should have already installed Dexterity in your Plone development
@@ -31,9 +31,11 @@ Add these lines into buildout.cfg::
      templer.zope
      templer.plone
      templer.dexterity
-     ${buildout:eggs}
+     ${instance:eggs}
 
-And run the buildout
+Where instance is the part name of a Zope instance or ZODB client.
+
+Run buildout.
 
 Usage
 ======
@@ -46,12 +48,15 @@ directory::
 Adding a content-type skeleton to an existing package::
 
   cd yourbuildout/src/your-product/src
-  ../../../bin/paster add dexterity_content
+  ../../../bin/paster add content_type
 
 Adding a behavior skeleton::
 
   cd yourbuildout/src/your-product/src
-  ../../../bin/paster add dexterity_behavior
+  ../../../bin/paster add behavior
+
+You **must** add your new project to your buildout and run buildout before
+adding content types or behaviors to your new package.
 
 Notes
 =====
