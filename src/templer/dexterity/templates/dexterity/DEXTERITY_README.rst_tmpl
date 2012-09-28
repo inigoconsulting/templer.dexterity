@@ -74,6 +74,11 @@ new skeleton.
 Guide to the package skeleton
 =============================
 
+At the top level of your package (where this document)
+resides, you will find
+
+
+
 Guide to content type skeletons
 ===============================
 
