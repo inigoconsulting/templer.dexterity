@@ -18,7 +18,7 @@ setup(name='templer.dexterity',
                        open(os.path.join("docs", "HISTORY.txt")).read(),
     # Get more strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        "Development Status :: 4 - Development",
+        "Development Status :: 3 - Alpha",
         "Framework :: Zope2",
         "Framework :: Zope3",
         "Framework :: Plone",

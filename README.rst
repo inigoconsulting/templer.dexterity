@@ -64,9 +64,9 @@ Notes
 Egg Directories
 ---------------
 
-In order to support local commands, templer will create Paste,
-PasteDeploy and PasteScript eggs inside your product. These are only needed
-for development. You can and should remove them from your add-on distribution.
+In order to support local commands, templer will create Paste, PasteDeploy and
+PasteScript eggs inside your product. These are only needed for development.
+You can and should remove them from your add-on distribution.
 
 Also remove::
 
@@ -80,9 +80,10 @@ Errors
 
 If you hit and error like this::
 
-  pkg_resources.DistributionNotFound: plone.app.relationfield: Not Found for: my.product (did you run python setup.py develop?)
+  pkg_resources.DistributionNotFound: plone.app.relationfield:
+  Not Found for: my.product (did you run python setup.py develop?)
 
-when attempting to run `paster addcontent`, then you need to ensure that
+when attempting to run `paster add`, then you need to ensure that
 Paster knows about all the relevant eggs from your buildout.
 
 Add `${instance:eggs}` to your `paster` section in your buildout, thusly::
