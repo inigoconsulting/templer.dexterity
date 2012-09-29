@@ -1,14 +1,13 @@
 [buildout]
+extends = http://dist.plone.org/release/4.2.1/versions.cfg
 develop = .
 parts = test
 versions = versions
-extends =
-    http://dist.plone.org/release/4.0.1/versions.cfg
-    http://good-py.appspot.com/release/dexterity/1.0b1?plone=4.0.1
-
-[versions]
 
 [test]
 recipe = zc.recipe.testrunner
 defaults = ['--tests-pattern', '^f?tests$', '-v']
-eggs = ${namespace_package}.${package}
+eggs = ${namespace_package}.${package} [test]
+
+[versions]
+
