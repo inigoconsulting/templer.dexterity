@@ -24,7 +24,10 @@ this package to your egg list::
         lxml
         plone.app.dexterity
         ...
-        ${namespace_package}.${package}
+        ${namespace_package}.${package} [test]
+
+The `[test]` tells buildout to include testing support for
+the package. That won't be needed for non-development use.
 
 Next, you must tell buildout how to find the package. Otherwise, it would try
 to download the package from a package repository. Look for the "develop ="
