@@ -1,8 +1,6 @@
 import copy
 
 from templer.zope import BasicZope
-from templer.zope import NestedZope
-from templer.core.base import get_var
 from templer.core.vars import StringVar, EASY, EXPERT
 
 try:
@@ -31,7 +29,7 @@ class Dexterity(BasicZope):
     summary = 'A Plone project that uses Dexterity content types'
     help = HELP_TEXT
     post_run_msg = POST_RUN_TEXT
-    required_templates = ['basic_namespace']
+    required_templates = ['plone_basic']
     category = "Plone Development"
     use_cheetah = True
     use_local_commands = SUPPORTS_LOCAL_COMMANDS
