@@ -35,21 +35,20 @@ section of your buildout configuration file and add the path to this package::
 Alternatively, you may use mr.developer to add the development package.
 
 Now, run bin/buildout to integrate the new package into your runtime
-environment. Restart zope/plone. Note that you should nearly always
-use "foreground" mode when developing a package.
+environment. Restart zope/plone. Note that you should nearly always use
+"foreground" mode when developing a package.
 
 Adding Content Type and Behavior Skeletons
 ==========================================
 
 You may use Templer and templer.dexterity to add content type or behavior
-skeletons to your package. To do so, you must first integrate the new
-package into your runtime environment (as described above) and run
-buildout. Without that step, you will not be able to use the "add"
-command.
+skeletons to your package. To do so, you must first integrate the new package
+into your runtime environment (as described above) and run buildout. Without
+that step, you will not be able to use the "add" command.
 
-The "add" command allows for addition of "sub" skeletons like
-content types and behaviors. It must be run inside the "src"
-directory of this package using the "paster add" command.
+The "add" command allows for addition of "sub" skeletons like content types
+and behaviors. It must be run inside the "src" directory of this package using
+the "paster add" command.
 
 To get a list of available add commands, do the following,
 starting from your buildout directory::
@@ -67,15 +66,66 @@ And, a behavior::
     cd src/${namespace_package}.${package}/src
     ../../../bin/paster add content_type
 
-As when you ran templer to create this package, templer will
-ask you the questions that must be answered to create the
-new skeleton.
+As when you ran templer to create this package, templer will ask you the
+questions that must be answered to create the new skeleton.
 
 Guide to the package skeleton
 =============================
 
-At the top level of your package (where this document)
-resides, you will find
+At the top level of your package (where this document) resides, you will find
+the basic components of a distributable Python package. setup.py and setup.cfg
+provide configuration of that package, and are frequently modified.
+
+buildout.cfg may generally be ignored. It mainly exists to allow creation
+of an environment for testing the templer.dexterity package. Feel free
+to remove it. The same goes for bootstrap.py
+
+Main documentation for your package is traditionally put in README.txt
+at the top of the package. Supplementary documentation like history and
+license files are typically located in the docs subdirectory.
+
+The src subdirectory contains the source components of your package,
+the working guts.
+
+Inside the src directory, you will find a namespace directory,
+${namespace_package}, and inside that, the package heart: ${package}.
+
+Inside src/${namespace_package}/${package}:
+
+__init__.py
+    Package initialization machinery. When you first create
+    this package, it will contain some i18n setup.
+
+locales
+    A directory for translations of your package messages.
+
+profiles
+    Generic Setup profiles for this package
+
+profiles : default
+    The default setup profile, often the only one. This will contain
+    information on package dependencies and content type factory
+    type information.
+
+static
+    Use the static directory for non-template browser resources like images,
+    stylesheets and JavaScript. See the README.txt in that directory.
+
+configure.zcml
+    Zope Control Markup Language directives for integrating this
+    package and its zope components into the Zope runtime environment.
+    This is a vital file, but if you only add content types and
+    behaviors via "add" commands, you may be able to ignore it.
+    The file is in XML.
+
+INTEGRATION.txt
+    A basic DocTest test file with a few simple tests. Add your
+    own package integration tests here.
+
+tests.py
+    A test setup module. Since it's named "tests", it's automatically
+    run by the test runner. When your package is first created, all
+    this does is run the integration doc tests.
 
 
 
