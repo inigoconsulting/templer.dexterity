@@ -1,6 +1,6 @@
 [buildout]
 develop = .
-parts = scripts test
+parts = test
 versions = versions
 extends =
     http://dist.plone.org/release/4.0.1/versions.cfg
