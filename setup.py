@@ -4,7 +4,6 @@ import os
 version = '1.0a1'
 
 tests_require = [
-    'plone.app.testing',
     'Cheetah',
     'PasteScript',
     'templer.core',
