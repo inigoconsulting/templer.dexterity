@@ -38,21 +38,6 @@ class ${interface_name}(form.Schema, IImageScaleTraversable):
     form.model("models/${content_class_filename}.xml")
 
 
-\# Custom content-type class; objects created for this content type will
-\# be instances of this class. Use this class to add content-type specific
-\# methods and properties. Put methods that are mainly useful for rendering
-\# in separate view classes.
-
-#if str($folderish) == 'True'
-class ${contenttype_classname}(dexterity.Container):
-#else
-class ${contenttype_classname}(dexterity.Item):
-#end if
-    grok.implements(${interface_name})
-
-    # Add your class methods and properties here
-
-
 \# View class
 \# The view will automatically use a similarly named template in
 \# ${content_class_filename}_templates.
