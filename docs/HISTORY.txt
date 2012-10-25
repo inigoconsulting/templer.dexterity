@@ -7,3 +7,11 @@ Changelog
 * Mostly derived from zopeskel.dexterity; see that project's repository for
   earlier history.
   [smcmahon]
+
+* Replaced SampleView with Index view that based on dexterity.DisplayForm and
+  plone.app.dexterity default view
+  [izhar]
+
+* Inherit and plonetest's plone4.x.cfg for buildout so that we always use the 
+  latest plone4 buildout.
+  [izhar]
