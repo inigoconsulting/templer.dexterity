@@ -146,7 +146,7 @@ it will create or modify the following files and directories:
 content_class_templates : directory
     Put templates for your new type here
 
-content_class_templates/sampleview.pt
+content_class_templates/index.pt
     A sample view template for your new content type
 
 models : directory
