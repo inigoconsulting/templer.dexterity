@@ -36,6 +36,15 @@
         </div>
     </fieldset>
 
+#if str($folderish) == 'True'
+    <fieldset id="folder-listing">
+        <legend>Contents</legend>
+        <tal:block define="listing_macro context/folder_listing/macros/listing">
+            <metal:use_macro use-macro="listing_macro" />
+        </tal:block>
+    </fieldset>
+#end if
+
   </metal:content-core>
 </metal:main>
 
