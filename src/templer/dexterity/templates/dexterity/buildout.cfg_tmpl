@@ -1,13 +1,17 @@
 [buildout]
-extends = http://dist.plone.org/release/4.2.1/versions.cfg
-develop = .
-parts = test
-versions = versions
+extends = http://svn.plone.org/svn/collective/buildout/plonetest/test-4.x.cfg
+package-name = ${namespace_package}.${package}
+parts += omelette
 
 [test]
 recipe = zc.recipe.testrunner
 defaults = ['--tests-pattern', '^f?tests$', '-v']
 eggs = ${namespace_package}.${package} [test]
 
-[versions]
+[omelette]
+recipe = collective.recipe.omelette
+eggs = \${instance:eggs}
+
+[instance]
+eggs += Pillow
 
