@@ -20,7 +20,7 @@
 
   <!-- schema and class used for content items -->
   <property name="schema">${package_dotted_name}.${content_class_filename}.${interface_name}</property> 
-#if str(folderish) == 'True'
+#if str($folderish) == 'True'
   <property name="klass">plone.directives.dexterity.Container</property>
 #else
   <property name="klass">plone.directives.dexterity.Item</property>
